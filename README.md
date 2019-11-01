@@ -2,7 +2,7 @@
 
 ## Introduction
 
-During my time at The Tech Academy, I worked with my peers in a team on a MVC Web Application in C#/ASP.Net. This project was a great opportunity to learn what it was like to have multiple people working on one project and improve the product. Most of the website was already built, so there was no time wasted on creating the website from scratch, and I got to experience what it was like to dive into a project that had already been started and to assimilate myself with the code that had already been written. I worked on several [front end stories](#front-end-stories) and [back end stories](#back-end-stories) to improve the look and functionality of the website. Over the two week sprint, I also had the opportunity to participate in daily meetings and weeking sprint retrospectives which offered insight into project management [skills](#other-skills-learned). I am confident I will be able to utilize these skills in any future project.
+During my time at The Tech Academy, I worked with my peers in a team on a MVC Web Application in C#/ASP.Net. This project was a great opportunity to learn what it was like to have multiple people working on one project and improve the product. Most of the website was already built, so there was no time wasted on creating the website from scratch, and I got to experience what it was like to dive into a project that had already been started and to assimilate myself with the code that had already been written. I worked on several [front end stories](#front-end-stories) and [back end stories](#back-end-stories) to improve the look and functionality of the website. Over the two week sprint, I also had the opportunity to participate in daily meetings and weekly sprint retrospectives which offered insight into project management [skills](#other-skills-learned). I am confident I will be able to utilize these skills in any future project.
 
 ## Front End Stories
 
@@ -140,9 +140,9 @@ I was tasked with fixing an issue with the background image stretching on some p
 
 ### Drop Down List Populated From Database
 
-This story was both Front and Back End, but the majority of it was back end. I had to add a drop down list to a Job Action page, with the contents of the Drop Down list populated from Jobs in our database. The goal was to be able to select a Job to attach the Job Action to, whereas before the Job Action would be automatically applied to which Job page it was opened on. This way, Job Action could be a standalone page later on. 
+This story was both Front and Back End, but the majority of it was back end. I added a drop down list to a Job Action page, with the contents of the Drop Down list populated from Jobs in our database. The goal was to be able to select a Job to attach the Job Action to, whereas before the Job Action would be automatically applied to which Job page it was opened on. This way, Job Action could be a standalone page later on. 
 
-The front end part was relatively easy, adding a drop down. However, getting the list to grab the data from Jobs was the difficult part.
+The front end part was relatively simple by adding a drop down. However, getting the list to grab the data from Jobs database was the challenging part.
 ````
 <div class="form-group">
       @Html.LabelFor(model => model.Job, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -152,7 +152,7 @@ The front end part was relatively easy, adding a drop down. However, getting the
       </div>
   </div>
 ````
-After I implemented the front end for the drop down list, I had to go to the controller and add the logic for data to be pulled from the database and returned to the view.
+After implementing the front end for the drop down list, I had to go to the controller and add the logic for data to be pulled from the database and returned to the view.
 ````
  private void PopulateJobActionDropDowns(object model, int JobId = 1)
     {
@@ -161,7 +161,7 @@ After I implemented the front end for the drop down list, I had to go to the con
 
     }
 ````
-I set the intial Job shown on the dropdown to be the first job in the list. That way, in the following Create action, it will always be populated by the integer that correlates to the job.
+I've set the intial Job shown on the dropdown to be the first job in the list. That way, in the following Create action, it will always be populated by the integer that correlates to the job.
 ````
     // GET: JobAction/Create
     public ActionResult Create(int? jobIDJobFK)
